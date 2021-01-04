@@ -1,0 +1,5 @@
+pp_d8cards.admin.config:
+  title: 'PP D8 Cards'
+  base_route_name: pp_d8cards.admin.config
+  names: pp_d8cards.settings
+

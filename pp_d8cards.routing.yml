@@ -1,0 +1,7 @@
+pp_d8cards.config_controller_config:
+  path: '/pp_d8cards/config'
+  defaults:
+    _form: '\Drupal\pp_d8cards\Form\ConfigPPD8cardsForm'
+    _title: 'Configuration'
+  requirements:
+    _permission: 'pp_d8cards config'

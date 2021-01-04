@@ -1,0 +1,6 @@
+message: 'Message PP D8 Cards'
+is_happy: true
+colors:
+  RED: RED
+  BLUE: BLUE
+langcode: 'en'

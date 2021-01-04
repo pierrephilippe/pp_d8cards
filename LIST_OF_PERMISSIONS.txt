@@ -1,0 +1,125 @@
+administer blocks
+administer comment types
+administer comments
+edit own comments
+post comments
+skip comment approval
+access comments
+export configuration
+import configuration
+synchronize configuration
+administer contact forms
+access site-wide contact form
+access user contact forms
+access contextual links
+delete orphan revisions
+administer comment display
+administer contact_message display
+administer node display
+administer block_content display
+administer paragraph display
+administer taxonomy_term display
+administer user display
+administer comment fields
+administer contact_message fields
+administer node fields
+administer block_content fields
+administer paragraph fields
+administer taxonomy_term fields
+administer user fields
+administer comment form display
+administer contact_message form display
+administer node form display
+administer block_content form display
+administer paragraph form display
+administer taxonomy_term form display
+administer user form display
+administer display modes
+access files overview
+administer filters
+use text format basic_html
+use text format full_html
+use text format raw
+use text format restricted_html
+administer image styles
+create article content
+create page content
+create boulemagique content
+create video content
+delete any article content
+delete any page content
+delete any boulemagique content
+delete any video content
+delete own article content
+delete own page content
+delete own boulemagique content
+delete own video content
+delete article revisions
+delete page revisions
+delete boulemagique revisions
+delete video revisions
+edit any article content
+edit any page content
+edit any boulemagique content
+edit any video content
+edit own article content
+edit own page content
+edit own boulemagique content
+edit own video content
+revert article revisions
+revert page revisions
+revert boulemagique revisions
+revert video revisions
+view article revisions
+view page revisions
+view boulemagique revisions
+view video revisions
+access content overview
+administer nodes
+administer content types
+bypass node access
+delete all revisions
+revert all revisions
+view all revisions
+view own unpublished content
+administer paragraphs settings
+administer paragraphs types
+edit behavior plugin settings
+view unpublished paragraphs
+administer url aliases
+create url aliases
+access in-place editing
+administer rest resources
+administer search
+use advanced search
+search content
+administer shortcuts
+customize shortcut links
+switch shortcut sets
+access shortcuts
+administer menu
+administer modules
+administer site configuration
+administer software updates
+administer themes
+link to any page
+access administration pages
+access site in maintenance mode
+access content
+access site reports
+view the administration theme
+create terms in tags
+delete terms in tags
+edit terms in tags
+access taxonomy overview
+administer taxonomy
+access toolbar
+access tour
+administer account settings
+administer permissions
+administer users
+cancel account
+change own username
+select account cancellation method
+access user profiles
+administer views

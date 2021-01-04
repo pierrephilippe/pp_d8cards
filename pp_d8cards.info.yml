@@ -1,0 +1,4 @@
+name: PP D8 Cards
+description: 'My custom module to learn D8'
+core: '8.x'
+type: module
