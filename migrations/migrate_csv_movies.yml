@@ -1,0 +1,43 @@
+id: pp_d8cards_migrate_csv_movies
+migration_group: migration_csv_custom
+label: 'Custom Movies migration'
+source:
+  plugin: csv
+  path: 'modules/custom/pp_d8cards/csv/movies.csv'
+  header_row_count: 1
+  ids: [id]
+  delimiter: ','
+process:
+  type:
+    plugin: default_value
+    default_value: movie
+  title: title
+  field_actors:
+    - plugin: callback
+      callable: trim
+    - plugin: entity_lookup
+      entity_type: node
+      bundle: actor
+      value_key: id
+      source: src_actors
+  field_genres:
+    - plugin: skip_on_empty
+      source: src_genre
+      method: process
+      message: 'No src_genre listed.'
+    - plugin: explode
+      delimiter: '|'
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: genres
+  field_plot: plot
+
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required: {  }
+  optional: {  }

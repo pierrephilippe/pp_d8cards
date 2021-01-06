@@ -1,0 +1,18 @@
+id: pp_d8cards_migrate_csv_actors
+migration_group: migration_csv_custom
+label: 'Custom actors migration'
+source:
+  plugin: csv
+  path: 'modules/custom/pp_d8cards/csv/actors.csv'
+  header_row_count: 1
+  ids: [id]
+process:
+  type:
+    plugin: default_value
+    default_value: actor
+  title: name
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required: {  }
+  optional: {  }

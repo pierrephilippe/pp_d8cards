@@ -1,1 +1,45 @@
 <?php
+
+function pp_d8cards_cron() {
+
+  $last_run = \Drupal::state()->get('pp_d8cards.last_run', 0);
+
+  // If 60 minutes passed since last time.
+  if ((\Drupal::time()->getRequestTime() - $last_run) > 60) {
+    // Do something.
+
+    $blocks = \Drupal::entityTypeManager()
+      ->getStorage('block_content')
+      ->loadByProperties(array('type' => 'stock_exchange_rate_card'));
+
+    // Update last price and change field value for each block.
+    foreach($blocks as $block) {
+      $url = 'N/A';
+      $title = 'N/A';
+
+      $currency_info = _get_currency_info($block->field_symbol->value);
+      if (isset($currency_info[0])) {
+        $url = $currency_info[0]->url;
+        $title = $currency_info[0]->title;
+      }
+      $block->field_url = $url;
+      $block->field_company_name = $title;
+      $block->save();
+    }
+    // Update last run.
+    \Drupal::state()->set('pp_d8cards.last_run', \Drupal::time()->getRequestTime());
+  }
+}
+
+/**
+ * Funciton to get stock exchange currency information from API.
+ */
+function _get_currency_info($symbol) {
+  $api_url = "https://api.polygon.io/v1/meta/symbols/".$symbol."/news?perpage=1&page=1&apiKey=kf6jBuAWGqY4crapmzSI4BDDZp7pCYgv";
+  $client = new GuzzleHttp\Client();
+  $request = $client->get($api_url);
+  $response = $request->getBody();
+  $response_json = json_decode((string)$response);
+
+  return $response_json;
+}
